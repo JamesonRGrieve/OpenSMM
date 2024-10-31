@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { cookies } from 'next/headers';
 // eslint-disable-next-line import/no-unassigned-import
-//import 'jrgcomponents/Style/Global';
+import 'jrgcomponents/Style/Global';
 import AppWrapper from 'jrgcomponents/AppWrapper/Wrapper/Themed';
 import theme from './theme';
 import Head from 'jrgcomponents/Head';
