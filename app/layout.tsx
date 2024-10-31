@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { cookies } from 'next/headers';
 // eslint-disable-next-line import/no-unassigned-import
-import 'jrgcomponents/Style/Global';
 import AppWrapper from 'jrgcomponents/AppWrapper/Wrapper/Themed';
 import theme from './theme';
 import Head from 'jrgcomponents/Head';
@@ -25,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }): React
     <html lang='en'>
       <Head />
       <body className={inter.className}>
-        {/* <AppWrapper
+        <AppWrapper
           themeConfig={{
             themeInjection: { theme: theme },
             defaultTheme: {
@@ -57,9 +56,9 @@ export default function RootLayout({ children }: { children: ReactNode }): React
               },
             },
           }}
-        > */}
-        {children}
-        {/* </AppWrapper> */}
+        >
+          {children}
+        </AppWrapper>
         <Toaster />
       </body>
     </html>
