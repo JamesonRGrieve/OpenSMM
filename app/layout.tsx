@@ -10,6 +10,7 @@ import React, { ReactNode } from 'react';
 import { Box, Typography } from '@mui/material';
 import Sidebar from '@/app/Nav';
 import { Toaster } from '@/components/ui/toaster';
+import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }): React
     <html lang='en'>
       <Head />
       <body className={inter.className}>
-        <AppWrapper
+        {/* <AppWrapper
           themeConfig={{
             themeInjection: { theme: theme },
             defaultTheme: {
@@ -56,9 +57,9 @@ export default function RootLayout({ children }: { children: ReactNode }): React
               },
             },
           }}
-        >
-          {children}
-        </AppWrapper>
+        > */}
+        {children}
+        {/* </AppWrapper> */}
         <Toaster />
       </body>
     </html>
