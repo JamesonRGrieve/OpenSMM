@@ -2,12 +2,14 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { cookies } from 'next/headers';
 // eslint-disable-next-line import/no-unassigned-import
-import 'jrgcomponents/Style/Global';
+//import 'jrgcomponents/Style/Global';
 import AppWrapper from 'jrgcomponents/AppWrapper/Wrapper/Themed';
 import theme from './theme';
 import Head from 'jrgcomponents/Head';
 import React, { ReactNode } from 'react';
 import { Box, Typography } from '@mui/material';
+import Sidebar from '@/app/Nav';
+import { Toaster } from '@/components/ui/toaster';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -33,13 +35,21 @@ export default function RootLayout({ children }: { children: ReactNode }): React
             },
           }}
           appWrapperConfig={{
-            header: {},
+            header: {
+              components: {
+                left: {
+                  width: '8rem',
+                  staticMenu: <Sidebar />,
+                },
+              },
+            },
             footer: {
               components: {
                 center: (
                   <Box textAlign='center'>
                     <Typography sx={{ margin: 0 }} variant='caption'>
-                      Brought to you by <a href='https://sintelli-tech.com'>SiNtelli Technologies</a> (Pty) Ltd
+                      Brought to you by <a href='https://sintelli-tech.com'>SiNtelli Technologies</a> (Pty) Ltd and{' '}
+                      <a href='https://zephyrex.dev/'>Zephyrex Technologies Limited</a>
                     </Typography>
                   </Box>
                 ),
@@ -49,6 +59,7 @@ export default function RootLayout({ children }: { children: ReactNode }): React
         >
           {children}
         </AppWrapper>
+        <Toaster />
       </body>
     </html>
   );
